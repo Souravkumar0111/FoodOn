@@ -9,7 +9,7 @@ function Footer() {
       <Link to="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
        Link
       </Link>
-      <span className="text-muted">© 2024 GoFood, Inc</span>
+      <span className="text-muted">© 2024 Foodon, Inc</span>
     </div>
 
   </footer>
