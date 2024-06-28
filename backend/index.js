@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoDB from './db.js'
-// import cors from 'cors';
+import cors from 'cors';
 import router from './routes/CreateUser.js'
 import router2 from './routes/DisplayData.js'
 import router3 from './routes/OrderData.js';
@@ -9,15 +9,15 @@ import dotenv from'dotenv';
 dotenv.config();
 const app=express();
 const PORT=process.env.PORT||5000;
-// app.use(cors());
-app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin","https://food-on-delta.vercel.app/");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-})
+app.use(cors());
+// app.use((req,res,next)=>{
+//     res.setHeader("Access-Control-Allow-Origin","https://food-on-delta.vercel.app/");
+//     res.header(
+//         "Access-Control-Allow-Headers",
+//         "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+// })
 app.use(express.json());
 app.use('/api',router);
 app.use('/api',router2);
